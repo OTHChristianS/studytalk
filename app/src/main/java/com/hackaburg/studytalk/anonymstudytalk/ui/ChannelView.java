@@ -41,11 +41,11 @@ public class ChannelView extends AppCompatActivity {
 
     private boolean publishPost(String text){
         Post post = new Post(text, 1);
-        Post a1 = new Post("tolle Antwort 1", 2);
+        /*Post a1 = new Post("tolle Antwort 1", 2);
         Post a2 = new Post("tollere Antwort", 3);
 
         post.addAnswer(a1);
-        post.addAnswer(a2);
+        post.addAnswer(a2);*/
 
         LinearLayout newPostView = this.createView(post);
 
@@ -90,7 +90,7 @@ public class ChannelView extends AppCompatActivity {
         //postWrapper.setBackgroundColor(0xFACACAC);
 
         LinearLayout.LayoutParams llp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-        llp.setMargins(0, 0, 0, 20);
+        llp.setMargins(0, 0, 0, 40);
         postWrapper.setLayoutParams(llp);
         postWrapper.setPadding(0, 0, 0, 0);
 
@@ -99,10 +99,11 @@ public class ChannelView extends AppCompatActivity {
         TextView view = new TextView(this);
         view.setText(t);
         view.setBackgroundColor(0xF575859);
+        view.setTextSize(16);
         postWrapper.addView(view);
 
         LinearLayout.LayoutParams llpA = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-        llpA.setMargins(20, 0, 0, 10);
+        llpA.setMargins(30, 0, 0, 20);
 
         for(Post answer : post.getAnswers()){
             postWrapper.addView(this.createSeparator());
